@@ -5,6 +5,7 @@
   var canVisitAllRooms = function(rooms) {
   var canOpen = false;
   var objectOfOpenedRooms = {};
+  var currentKeys = rooms[0]; //an array
   var nextKeys = [];
 
   var openNextDoor = (coordinates) => {
@@ -15,7 +16,7 @@
       }
     }
   }
-  openNextDoor(rooms[0]);
+  openNextDoor(currentKeys);
   var checkKeys = Object.values(objectOfOpenedRooms);
   if (checkKeys.length === rooms.length - 1) {
     canOpen = true;
