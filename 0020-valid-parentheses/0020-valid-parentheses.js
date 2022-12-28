@@ -4,34 +4,35 @@
  */
 var isValid = function(s) {
   var result = false;
-  var array = [];
+  var array = s.split('');
 
-  for (var i = 0; i < s.length; i++) {
-    if (s[i] === '[') {
-      array.push(1);
-    } else if (s[i] === '(') {
-      array.push(2);
-    } else if (s[i] === '{') {
-      array.push(3);
-    } else if (s[i] === ']') {
-      array.push(-1);
-    } else if (s[i] === ')') {
-      array.push(-2);
-    } else if (s[i] === '}') {
-      array.push(-3);
+  var recurseArray = (array) => {
+    if (array.length  === 0) {
+      result = true;
     }
-  }
+
     for (var j = 0; j < array.length; j++) {
-    if (array[j] < 0) {
-      if (array[j] + array[j - 1] === 0) {
-        array.splice(j - 1, 2);
-        j = j - 2;
+      if (array[j] === ')') {
+        if (array[j - 1] === '(') {
+          array.splice(j - 1, 2)
+        recurseArray(array)
+        }
       }
-    }
+      if (array[j] === ']') {
+        if (array[j - 1] === '[') {
+          array.splice(j - 1, 2)
+        recurseArray(array)
+        }
+      }
+      if (array[j] === '}') {
+        if (array[j - 1] === '{') {
+          array.splice(j - 1, 2)
+        recurseArray(array)
+        }
+      }
   }
+  }
+  recurseArray(array);
 
-  if (array.length  === 0) {
-    result = true;
-  }
   return result;
 };
