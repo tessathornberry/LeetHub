@@ -1,3 +1,7 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
 var isPalindrome = function(s) {
   var isPalindrome = false;
 
@@ -18,28 +22,13 @@ var isPalindrome = function(s) {
     return true;
   }
   var array = newString.split('');
-  var firstIndex = Math.ceil(newString.length / 2);
-  var first = array.slice(0, firstIndex);
-  var second = array.slice(firstIndex, array.length).reverse();
 
-  for (var j = 0; j < first.length; j++) {
-    if (first[j] && !second[j]) {
-      return isPalindrome;
-    }
-    if (first[j] === second[j]) {
-      isPalindrome = true;
-    } else {
-      isPalindrome = false;
-      return isPalindrome;
-    }
-  }
+  var first = array.slice().join('');
+  var second = array.slice().reverse().join('');
 
-  if (first.length === 1 || first.length === 0) {
+  if (first === second) {
     isPalindrome = true;
   }
-  //edge cases, empty string, either no letters, or empty
-  //first, string conversion
-  //then, check if palindrome
-  //can make a reversed array of half the letters, depending on
+
   return isPalindrome;
 };
