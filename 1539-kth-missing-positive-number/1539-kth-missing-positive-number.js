@@ -10,7 +10,6 @@
   let lastNumber = arr[arr.length - 1];
 
   let traversalLength = lastNumber + k;
-  let missingValuesArray = [];
 
   for (var i = 0; i < traversalLength; i++) {
     if (!arr.includes(currentValue)) {
