@@ -5,8 +5,7 @@
 var convertTemperature = function(celsius) {
     let resultTemps = [];
     
-    resultTemps.push(celsius + 273.15);
-    resultTemps.push((celsius * 1.8) + 32);
+    resultTemps.push(celsius + 273.15, (celsius * 1.8) + 32);
     
     
     return resultTemps;
