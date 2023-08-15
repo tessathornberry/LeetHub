@@ -3,33 +3,16 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
-  var prefix = '';
-  var shortestString = strs[0];
-  var strsCount = strs.length;
-  
-  for (var i = 1; i < strsCount; i++) {
-    if (strs[i].length < shortestString.length) {
-      shortestString = strs[i];
-    } 
-  }
-    var wordsCount = 0;
-  while (shortestString.length > 0 && prefix.length <= 0) {
-  for (var j = 0; j < strsCount; j++) {
-    console.log(strs[j].slice(0, shortestString.length),shortestString)
-    if (strs[j].slice(0, shortestString.length) === shortestString) {
-      wordsCount++;
-      console.log(wordsCount)
-      if (wordsCount === strsCount) {
-        prefix = shortestString;
-        return prefix;
-      } 
+  strs = strs.sort();
+  let str1 = strs[0];
+  let str2 = strs[strs.length-1];
+  let index = 0;
+  while (index < str1.length && index < str2.length) {
+    if (str1[index] === str2[index]) {
+      index++;
     } else {
-      shortestString = shortestString.slice(0, -1);
-      j = 0;
-      wordsCount = 0;
-      continue;
+      break;
     }
   }
-  }
-  return prefix;
-};
+  return str1.slice(0, index);
+}
