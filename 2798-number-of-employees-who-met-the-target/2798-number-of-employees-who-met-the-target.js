@@ -9,7 +9,6 @@ var numberOfEmployeesWhoMetTarget = function(hours, target) {
       return 1;
     }
   }
-  var counter = 0;
   function compareNumbers(a, b) {
     return a - b;
   }
@@ -19,7 +18,9 @@ var numberOfEmployeesWhoMetTarget = function(hours, target) {
     index++;
   }
   if (index < hours.length) {
-    counter = hours.slice(index).length;
+    return hours.slice(index).length;
+  } else {
+    return 0;
   }
-  return counter;
+
 };
