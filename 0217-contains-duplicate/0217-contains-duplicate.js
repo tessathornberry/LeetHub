@@ -3,14 +3,11 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-  let pairStorage = {};
-
-  for (var i = 0; i < nums.length; i++) {
-    if (pairStorage[nums[i]]) {
-      return true;
-    } else {
-      pairStorage[nums[i]] = 1;
-    }
+var charming = new Set(nums);
+  
+  if (charming.size < nums.length) {
+    return true;
   }
+  
   return false;
 };
