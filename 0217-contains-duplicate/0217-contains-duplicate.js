@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-var charming = new Set(nums);
+  var charming = new Set(nums);
   
   if (charming.size < nums.length) {
     return true;
