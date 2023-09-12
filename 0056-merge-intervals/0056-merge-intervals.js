@@ -10,11 +10,8 @@ var merge = function(intervals) {
   if (intervals.length === 1) {
     return intervals;
   }
-  var first = 0;
-  var second = 0;
   
   for (var i = 1; i < intervals.length; i++) {
-      
     if (intervals[i][0] > intervals[i-1][1]) {
       continue;
     } 
