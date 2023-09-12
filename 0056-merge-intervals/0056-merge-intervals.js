@@ -3,12 +3,10 @@
  * @return {number[][]}
  */
 var merge = function(intervals) {
-  var newArray = [];
   function compareNumbers(a, b) {
-  return a[0] - b[0];
-}
+    return a[0] - b[0];
+  }
   intervals.sort(compareNumbers);
-  console.log('intervals', intervals)
   if (intervals.length === 1) {
     return intervals;
   }
@@ -26,10 +24,6 @@ var merge = function(intervals) {
       intervals.splice(i, 1);
       i = 0;
     }
-    
-  
-    
-   
   }
   
   return intervals;
