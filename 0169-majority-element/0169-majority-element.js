@@ -11,6 +11,9 @@ var majorityElement = function(nums) {
             container[nums[i]] = 1;
         } else {
             container[nums[i]]++;
+            if (container[nums[i]] > (nums.length/2)) {
+                return nums[i];
+            }
             if (container[nums[i]] > maxCount) {
                 maxCount = container[nums[i]];
                 majVal = nums[i];
