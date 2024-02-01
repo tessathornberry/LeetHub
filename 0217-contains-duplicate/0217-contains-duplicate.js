@@ -3,9 +3,11 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-  var charming = new Set(nums);
-  if (charming.size < nums.length) {
-    return true;
-  }
-  return false;
+    var numsSet = new Set(nums);
+    if (numsSet.size < nums.length) {
+        return true;
+    }
+
+    return false;
+    
 };
