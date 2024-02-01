@@ -3,22 +3,27 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    let container = {};
-    let majVal = nums[0];
-    let maxCount = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (!container[nums[i]]) {
-            container[nums[i]] = 1;
-        } else {
-            container[nums[i]]++;
-            if (container[nums[i]] > (nums.length/2)) {
-                return nums[i];
-            }
-            if (container[nums[i]] > maxCount) {
-                maxCount = container[nums[i]];
-                majVal = nums[i];
-            }
-        }
+    // let container = {};
+    // let majVal = nums[0];
+    // let maxCount = 0;
+    // for (let i = 0; i < nums.length; i++) {
+    //     if (!container[nums[i]]) {
+    //         container[nums[i]] = 1;
+    //     } else {
+    //         container[nums[i]]++;
+    //         if (container[nums[i]] > (nums.length/2)) {
+    //             return nums[i];
+    //         }
+    //         if (container[nums[i]] > maxCount) {
+    //             maxCount = container[nums[i]];
+    //             majVal = nums[i];
+    //         }
+    //     }
+    // }
+    // return majVal;
+    if (nums.length === 1) {
+        return nums[0];
     }
-    return majVal;
+    nums.sort();
+    return nums[Math.round((nums.length-1)/2)]
 };
