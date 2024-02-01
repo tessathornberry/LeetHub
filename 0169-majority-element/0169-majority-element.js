@@ -21,9 +21,9 @@ var majorityElement = function(nums) {
     //     }
     // }
     // return majVal;
-    if (nums.length === 1) {
-        return nums[0];
-    }
+    // if (nums.length === 1) {
+    //     return nums[0];
+    // }
     nums.sort();
     return nums[Math.round((nums.length-1)/2)]
 };
