@@ -13,9 +13,6 @@ var sortedSquares = function(nums) {
     
     for (let i = 0; i < nums.length; i++) {
       resultArray[i] = nums[i]* nums[i];
-        // if (resultArray[i - 1] && resultArray[i - 1] < resultArray[i]) {
-        //     resultArray = resultArray.sort(compareNumbers);
-        // }
     }
 
     return resultArray.sort(compareNumbers);
